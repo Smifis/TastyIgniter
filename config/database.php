@@ -41,12 +41,12 @@ return [
 
         'mysql' => [
             'driver' => 'mysql',
-            'host' => '127.0.0.1',
-            'port' => 3306,
-            'database' => 'database',
-            'username' => 'username',
-            'password' => 'password',
-            'unix_socket' => '',
+            'host' => env('RDS_HOSTNAME', '127.0.0.1'),
+            'port' => env('RDS_PORT', '3306'),
+            'database' => env('RDS_DB_NAME', 'database'),
+            'username' => env('RDS_USERNAME', 'root'),
+            'password' => env('RDS_PASSWORD', ''),
+            'unix_socket' => env('DB_SOCKET', ''),
             'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',
             'prefix' => 'ti_',
